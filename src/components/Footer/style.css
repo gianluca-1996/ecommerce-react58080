@@ -1,0 +1,9 @@
+.footer{
+    background-color: black;
+    height: 300px;
+    text-align: center;
+}
+
+.footer h3{
+    color: lightblue;
+}

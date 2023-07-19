@@ -1,0 +1,4 @@
+.cartDiv{
+    display: flex;
+    flex-direction: row;
+}
