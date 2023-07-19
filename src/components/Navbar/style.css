@@ -7,8 +7,10 @@
     padding: 20px;
 }
 
-h1{
+#tituloNav{
     color: white;
+    font-weight: 800;
+    font-size: 70px;
 }
 
 .menuNav{
