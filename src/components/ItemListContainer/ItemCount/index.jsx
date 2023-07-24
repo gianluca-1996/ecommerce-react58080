@@ -26,6 +26,13 @@ const ItemCount = ({stock, inicial, title}) => {
     }
 
     return (
+        <ContentCount stock={stock} title={title} contador={contador} decrementaContador={decrementaContador} desabilitaDecremento={desabilitaDecremento} incrementaContador={incrementaContador} desabilitaIncremento={desabilitaIncremento} habilitaCarrito={habilitaCarrito} onAdd={onAdd}/>
+    )
+}
+
+const ContentCount = ({stock, title, contador, decrementaContador, desabilitaDecremento, incrementaContador, desabilitaIncremento,
+    habilitaCarrito, onAdd}) => {
+    return(
         <div className="contentCount">
             <div className="contentLog">
                 <div className="title">
