@@ -1,27 +1,34 @@
 import "./style.css"
-import Button from "./Button"
-import { useState } from "react";
-import ItemCount from "./ItemCount";
+import {data} from "../../mocks/data"
+import { useState, useEffect } from "react";
+import ItemList from "./ItemList";
 
-const ItemListContainer = ({greetings}) => {
-    let [saludo, setSaludo] = useState(greetings)
 
-    const cambiaSaludo = () => {
-        if(saludo == "Adios!"){
-            setSaludo("Hola mundo React!")
-        }
-        else{
-            setSaludo("Adios!")
-        }
+const ItemListContainer = () => {
+    
+    let [productos, setProductos] = useState([])
+    let datos
+
+    const getDatos = () => {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(data)
+            }, 2000);
+        })
     }
+
+    async function fetchingData(){
+        datos = await getDatos()
+        setProductos(datos)
+    }
+
+    useEffect(() => {
+        fetchingData()
+    }, [])
 
     return(
         <div className="principal">
-            <h1 id="saludoeReact">{saludo}</h1>
-            <Button modifica={cambiaSaludo} />
-            <ItemCount stock={4} inicial={0} title={"Napolitana"}/>
-            <ItemCount stock={3} inicial={0} title={"Jamon y Morrones"}/>
-            <ItemCount stock={0} inicial={0} title={"Muzza Temperlina"}/>
+            <ItemList productos={productos}/>
         </div>
     );
     
