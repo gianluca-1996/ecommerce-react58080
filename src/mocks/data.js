@@ -3,8 +3,8 @@ export const data = [
         id: "1",
         title: "Napolitana",
         description: "Salsa, Muzza, tomate, ajo, oregano",
-        price: "3.000",
-        pictureUrl: "urlDelProducto",
+        price: "$3.000",
+        pictureUrl: "src/assets/img/napolitana.jpg",
         stock: "4"
     },
     {

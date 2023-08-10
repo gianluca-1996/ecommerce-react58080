@@ -24,6 +24,7 @@ const ItemListContainer = () => {
 
     useEffect(() => {
         fetchingData()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return(
