@@ -25,6 +25,9 @@ const ItemDetail = ({producto}) => {
           <Typography variant="body2" color="text.secondary">
             {producto.description}
           </Typography>
+          <Typography variant="body2" color="text.secondary">
+            <strong>${producto.price}</strong>
+          </Typography>
         </CardContent>
         <CardActions>
           <Button size="small">Agregar al Carrito</Button>

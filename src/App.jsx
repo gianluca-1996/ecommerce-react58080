@@ -8,10 +8,10 @@ function App() {
   return (
     <main className='main'>
       <Navbar/>
-      <div>
+      <div className='divItemListContainer'>
         <ItemListContainer/>
       </div>
-      <div>
+      <div className='divItemDetailContainer'>
         <ItemDetailContainer id={1}/>
       </div>
       <Footer/>

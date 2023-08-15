@@ -40,9 +40,10 @@ const Content = (props) => {
             <div className="contentLog">
                 <div className="title">
                     <h3>{props.title}</h3>
-                    <p>({props.description})</p>
-                    <p>${props.price}</p>
                     <p><strong>Stock: ({props.stock})</strong></p>
+                </div>
+                <div>
+                    <button>Ver Detalles</button>
                 </div>
                 <div className="contentBtn">
                     <button onClick={props.decrementaContador} disabled={props.desabilitaDecremento}>-</button>
@@ -50,7 +51,9 @@ const Content = (props) => {
                     <button onClick={props.incrementaContador} disabled={props.desabilitaIncremento}>+</button>
                 </div>
             </div>
-            <button className="btnCarrito" disabled={props.desHabilitaCarrito} onClick={props.onAdd}>Agregar al carrito</button>
+            <div>
+                <button className="btnCarrito" disabled={props.desHabilitaCarrito} onClick={props.onAdd}>Agregar al carrito</button>
+            </div>
         </div>
     )
 }

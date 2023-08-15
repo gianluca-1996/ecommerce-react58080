@@ -1,23 +1,17 @@
 .contentCount{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    justify-items: center;
-    flex-wrap: wrap;
-    width: 40%;
-    margin-left: 30%;
-    margin-right: 30%;
+    flex-direction: column;
+    width: 300px;
     background: radial-gradient(ellipse at top, lightblue, transparent),
                 radial-gradient(ellipse at bottom, deepskyblue, transparent);
     border-radius: 10px;
     border: 2px solid dodgerblue;
-    margin-top: 5%;
+    margin-left: 5%;
 }
 
 .contentLog{
     display: flex;
     flex-direction: column;
-    width: 250px;
     text-align: center;
 }
 
@@ -28,14 +22,12 @@
     flex-direction: row;
     justify-content: space-between;
     background-color: white;
-    margin-left: 2%;
-    margin-bottom: 2%;
 }
 
 .btnCarrito{
     border: 2px solid dodgerblue;
     border-radius: 10px;
-    height: 5%;
-    margin-top: 9%;
-    margin-right: 5%;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
