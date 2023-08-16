@@ -6,7 +6,7 @@
                 radial-gradient(ellipse at bottom, deepskyblue, transparent);
     border-radius: 10px;
     border: 2px solid dodgerblue;
-    margin-left: 5%;
+    padding: 10px;
 }
 
 .contentLog{

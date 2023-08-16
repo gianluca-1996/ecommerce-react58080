@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import "./style.css"
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Item = ({producto}) => {
     let [contador, setContador] = useState(0)
@@ -23,11 +24,11 @@ const Item = ({producto}) => {
     }
 
     const onAdd = () => {
-        console.log(`Pizza seleccionada: ${producto.title}\nCantidad: ${contador}`)
+        console.log(`Producto seleccionado: ${producto.title}\nCantidad: ${contador}`)
     }
 
     return (
-        <Content title={producto.title} contador={contador} stock={producto.stock}
+        <Content id={producto.id} title={producto.title} contador={contador} stock={producto.stock}
         decrementaContador={decrementaContador} desabilitaDecremento={desabilitaDecremento}
         incrementaContador={incrementaContador} desabilitaIncremento={desabilitaIncremento}
         desHabilitaCarrito={desHabilitaCarrito} description={producto.description} price={producto.price} onAdd={onAdd}/>
@@ -43,7 +44,9 @@ const Content = (props) => {
                     <p><strong>Stock: ({props.stock})</strong></p>
                 </div>
                 <div>
-                    <button>Ver Detalles</button>
+                    <Link to={`/item/${props.id}`}>
+                        <button>Ver Detalles</button>
+                    </Link>
                 </div>
                 <div className="contentBtn">
                     <button onClick={props.decrementaContador} disabled={props.desabilitaDecremento}>-</button>

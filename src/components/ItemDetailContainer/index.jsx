@@ -4,11 +4,14 @@
 import { useState, useEffect } from "react"
 import {data} from "../../mocks/data"
 import ItemDetail from "./ItemDetail"
+import "./style.css"
+import { useParams } from "react-router-dom"
 
 
 
-const ItemDetailContainer = ({id}) => {
+const ItemDetailContainer = () => {
     
+    const {id} = useParams()
     const [producto, setProducto] = useState({})
 
     async function fetchData(id){
@@ -21,7 +24,9 @@ const ItemDetailContainer = ({id}) => {
     }, [])
 
     return(
-        <ItemDetail producto={producto}/>
+        <div className="divItemDetailContainer">
+            <ItemDetail producto={producto}/>
+        </div>
     )
 }
 
