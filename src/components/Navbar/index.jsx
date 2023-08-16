@@ -9,9 +9,18 @@ const Navbar = () => {
                 <h1 id="tituloNav">Temperlina</h1>
             </div>
             <div className="menuNav">
-                <Link to="/">Productos</Link>
-                <Link to="/category">Categorias</Link>
-                <Link to="/item">Item</Link>
+                <Link to="/">
+                    <button>Productos</button>
+                </Link>
+                <Link to="/category/pizza">
+                    <button>Pizzas</button>
+                </Link>
+                <Link to="/category/sandwich">
+                    <button>Sandwich</button>
+                </Link>
+                <Link to="/category/empanada">
+                    <button>Empanadas</button>
+                </Link>
                 <CartWidget />
             </div>
         </nav>

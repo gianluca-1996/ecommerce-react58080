@@ -2,18 +2,18 @@ import "./style.css"
 import {data} from "../../mocks/data"
 import { useState, useEffect } from "react";
 import ItemList from "./ItemList";
-
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
     
     let [productos, setProductos] = useState([])
-    let datos
+    let datos, categoryId = useParams()
 
     const getDatos = () => {
         return new Promise((resolve) => {
             setTimeout(() => {
                 resolve(data)
-            }, 2000);
+            }, 1000);
         })
     }
 
@@ -29,7 +29,7 @@ const ItemListContainer = () => {
 
     return(
         <div className="divItemListContainer">
-            <ItemList productos={productos}/>
+            <ItemList productos={productos} categoryId={categoryId} />
         </div>
     );
     

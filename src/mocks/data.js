@@ -43,5 +43,41 @@ export const data = [
         pictureUrl: "src/assets/img/milaPollo.jpg",
         stock: "3",
         category: "sandwich"
+    },
+    {
+        id: "6",
+        title: "Jamon y queso",
+        description: "Muzza, jamon",
+        price: "500",
+        pictureUrl: "src/assets/img/empJamonQueso.jpg",
+        stock: "5",
+        category: "empanada"
+    },
+    {
+        id: "7",
+        title: "Carne",
+        description: "Carne, cebolla, morron, huevo",
+        price: "500",
+        pictureUrl: "src/assets/img/empCarne.jpg",
+        stock: "7",
+        category: "empanada"
+    },
+    {
+        id: "8",
+        title: "Capresse",
+        description: "Muzza, tomate, albahaca",
+        price: "500",
+        pictureUrl: "src/assets/img/empCapresse.jpg",
+        stock: "6",
+        category: "empanada"
+    },
+    {
+        id: "9",
+        title: "Pollo",
+        description: "Pollo, cebolla, morron, huevo",
+        price: "500",
+        pictureUrl: "src/assets/img/empPollo.jpg",
+        stock: "4",
+        category: "empanada"
     }
 ]
