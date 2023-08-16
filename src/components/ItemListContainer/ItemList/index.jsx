@@ -4,7 +4,6 @@ import Item from "./Item"
 import './style.css'
 
 const ItemList = ({productos, categoryId}) => {
-console.log(categoryId.categoryId)
     let datos = []
 
     if(categoryId.categoryId){
@@ -12,7 +11,6 @@ console.log(categoryId.categoryId)
     }
     else{
         datos = productos
-        console.log('else')
     }
 
     return(
