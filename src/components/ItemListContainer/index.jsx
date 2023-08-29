@@ -1,31 +1,13 @@
 import "./style.css"
-import {data} from "../../mocks/data"
-import { useState, useEffect } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../context/cartContext";
 
 const ItemListContainer = () => {
     
-    let [productos, setProductos] = useState([])
-    let datos, categoryId = useParams()
-
-    const getDatos = () => {
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                resolve(data)
-            }, 1000);
-        })
-    }
-
-    async function fetchingData(){
-        datos = await getDatos()
-        setProductos(datos)
-    }
-
-    useEffect(() => {
-        fetchingData()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    let categoryId = useParams()
+    const {productos} = useContext(CartContext)
 
     return(
         <div className="divItemListContainer">

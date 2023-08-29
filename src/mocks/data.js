@@ -23,7 +23,7 @@ export const data = [
         description: "Salsa, Muzza, oregano",
         price: "2.000",
         pictureUrl: "src/assets/img/muzza.jpg",
-        stock: "0",
+        stock: "3",
         category: "pizza"
     },
     {
@@ -50,7 +50,7 @@ export const data = [
         description: "Muzza, jamon",
         price: "500",
         pictureUrl: "src/assets/img/empJamonQueso.jpg",
-        stock: "5",
+        stock: "3",
         category: "empanada"
     },
     {
@@ -59,7 +59,7 @@ export const data = [
         description: "Carne, cebolla, morron, huevo",
         price: "500",
         pictureUrl: "src/assets/img/empCarne.jpg",
-        stock: "7",
+        stock: "4",
         category: "empanada"
     },
     {
@@ -68,7 +68,7 @@ export const data = [
         description: "Muzza, tomate, albahaca",
         price: "500",
         pictureUrl: "src/assets/img/empCapresse.jpg",
-        stock: "6",
+        stock: "2",
         category: "empanada"
     },
     {

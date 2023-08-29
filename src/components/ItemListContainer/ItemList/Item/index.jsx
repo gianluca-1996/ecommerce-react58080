@@ -2,9 +2,12 @@
 import "./style.css"
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../../context/cartContext";
 
 const Item = ({producto}) => {
     let [contador, setContador] = useState(0)
+    const {addItem} = useContext(CartContext)
     let desabilitaIncremento = false
     let desabilitaDecremento = false
     let desHabilitaCarrito = (producto.stock == 0 || contador == 0) ? true : false
@@ -24,14 +27,21 @@ const Item = ({producto}) => {
     }
 
     const onAdd = () => {
-        console.log(`Producto seleccionado: ${producto.title}\nCantidad: ${contador}`)
+        const item = {
+            id: producto.id,
+            title: producto.title,
+            price: producto.price
+        }
+
+        addItem(item, contador)
     }
 
     return (
         <Content id={producto.id} title={producto.title} contador={contador} stock={producto.stock}
         decrementaContador={decrementaContador} desabilitaDecremento={desabilitaDecremento}
         incrementaContador={incrementaContador} desabilitaIncremento={desabilitaIncremento}
-        desHabilitaCarrito={desHabilitaCarrito} description={producto.description} price={producto.price} onAdd={onAdd}/>
+        desHabilitaCarrito={desHabilitaCarrito} description={producto.description} price={producto.price}
+        onAdd={onAdd}/>
     )
 }
 
