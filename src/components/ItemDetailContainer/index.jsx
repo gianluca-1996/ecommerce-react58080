@@ -4,7 +4,6 @@
 import { useState, useEffect } from "react"
 import {data} from "../../mocks/data"
 import ItemDetail from "./ItemDetail"
-import "./style.css"
 import { useParams } from "react-router-dom"
 
 

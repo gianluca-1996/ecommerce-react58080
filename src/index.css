@@ -42,10 +42,6 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
-  background: radial-gradient(ellipse at top, white, transparent),
-  radial-gradient(ellipse at bottom, deepskyblue, transparent);
-}
 
 @media (prefers-color-scheme: light) {
   :root {

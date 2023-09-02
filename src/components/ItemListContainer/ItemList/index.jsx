@@ -14,7 +14,9 @@ const ItemList = ({productos, categoryId}) => {
     }
 
     return(
-        datos.map((prod) => <div className="item" key={prod.id}><Item key={prod.id} producto={prod}/></div>)
+        datos.map((prod) => <div className="item" key={prod.id}>
+                <Item key={prod.id} producto={prod}/>
+            </div>)
     )
 }
 

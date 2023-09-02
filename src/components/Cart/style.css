@@ -1,0 +1,26 @@
+.total{
+    text-align: center;
+    color: green;
+}
+.vaciar{
+    text-align: center;
+}
+
+.tabla{
+    background-color: beige;
+}
+
+.infoCarrito{
+    min-height: 400px;
+}
+
+.infoCarritoVacio{
+    min-height: 400px;
+    text-align: center;
+    color: black;
+}
+
+.btnCheckout{
+    text-align: center;
+    padding: 10px;
+}

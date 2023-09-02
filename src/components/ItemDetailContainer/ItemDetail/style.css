@@ -1,17 +1,30 @@
 .card{
-    margin-left: 35%;
-    width: 500px;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding: 20px;
 }
 
 .contadorClass{
     display: flex;
     flex-direction: row;
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
+    justify-content: center;
+    padding: 10px;
 }
 
 .contador{
     width: 50px;
     text-align: center;
+}
+
+.bntAgregaFinaliza{
+    text-align: center;
+}
+
+.infoItem{
+    padding: 5px;
+}
+
+.cardContent{
+    background-color: beige;
 }

@@ -1,33 +1,3 @@
-.contentCount{
-    display: flex;
-    flex-direction: column;
+#btnDetalle{
     width: 300px;
-    background: radial-gradient(ellipse at top, lightblue, transparent),
-                radial-gradient(ellipse at bottom, deepskyblue, transparent);
-    border-radius: 10px;
-    border: 2px solid dodgerblue;
-    padding: 10px;
-}
-
-.contentLog{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
-.contentBtn{
-    border: 2px solid dodgerblue;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: white;
-}
-
-.btnCarrito{
-    border: 2px solid dodgerblue;
-    border-radius: 10px;
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
 }

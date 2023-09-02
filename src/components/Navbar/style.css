@@ -1,21 +1,23 @@
 .navbar{
     background-color: deepskyblue;
     display: flex;
-    align-items: center;
+    align-items: last baseline;
     justify-content: space-between;
-    flex-direction: column;
-    padding: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
 }
 
 #tituloNav{
     color: white;
     font-weight: 800;
-    font-size: 70px;
+    margin-left: 5%;
 }
 
 .menuNav{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 60%;
+    width: 50%;
+    margin-right: 5%;
 }
