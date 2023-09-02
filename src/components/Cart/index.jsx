@@ -20,9 +20,8 @@ const Cart = () => {
     const {cart, clearCart, total, removeItem, cantidadCarrito} = useContext(CartContext)
     const rows = cart
 
-    console.log(cantidadCarrito)
     if(cantidadCarrito === 0){
-        console.log('si')
+        
         return(
             
             <div className="infoCarritoVacio">
@@ -40,38 +39,38 @@ const Cart = () => {
                 <TableContainer component={Paper} className="tabla">
                     <Table sx={{ minWidth: 650 }} aria-label="simple table">
                         <TableHead>
-                        <TableRow>
-                        <TableCell>
-                                <h3>PRODUCTO</h3>
-                            </TableCell>
-                            <TableCell align="left">
-                                <h3>PRECIO</h3>
-                            </TableCell>
-                            <TableCell align="left">
-                                <h3>CANTIDAD</h3>
-                            </TableCell>
-                            <TableCell align="left">
-                                <h3>SUBTOTAL</h3>
-                            </TableCell>
-                        </TableRow>
-                        </TableHead>
+                            <TableRow>
+                                <TableCell>
+                                    <h3>PRODUCTO</h3>
+                                </TableCell>
+                                <TableCell align="left">
+                                    <h3>PRECIO</h3>
+                                </TableCell>
+                                <TableCell align="left">
+                                    <h3>CANTIDAD</h3>
+                                </TableCell>
+                                <TableCell align="left">
+                                    <h3>SUBTOTAL</h3>
+                                </TableCell>
+                            </TableRow>
+                            </TableHead>
                         <TableBody>
                         {rows.map((row) => (
                             <TableRow
                             key={row.id}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                             >
-                            <TableCell component="th" scope="row">
-                                {row.title}
-                            </TableCell>
-                            <TableCell align="left">${row.price}</TableCell>
-                            <TableCell align="left">{row.cant}</TableCell>
-                            <TableCell align="left">{row.subtotal}</TableCell>
-                            <TableCell align="right">
+                                <TableCell component="th" scope="row">
+                                    {row.title}
+                                </TableCell>
+                                <TableCell align="left">${row.price}</TableCell>
+                                <TableCell align="left">{row.cant}</TableCell>
+                                <TableCell align="left">${row.subtotal}</TableCell>
+                                <TableCell align="right">
                                 <Button variant="contained" color="error" onClick={ () => {removeItem(row)} }>
                                     Eliminar
                                 </Button>
-                            </TableCell>
+                                </TableCell>
                             </TableRow>
                         ))}
                         </TableBody>
@@ -91,5 +90,5 @@ const Cart = () => {
     )
     }
 }
-//{ cart.map( (item) => <CartItem key={item.id} item={item}/> ) }
+
 export default Cart
