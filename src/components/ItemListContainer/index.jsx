@@ -9,6 +9,9 @@ const ItemListContainer = () => {
     let categoryId = useParams()
     const {productos} = useContext(CartContext)
 
+    //TODO: REALIZAR LA LLAMADA A FIRESTORE SEGUN CATEGORYID
+
+
     return(
         <div className="divItemListContainer">
             <ItemList productos={productos} categoryId={categoryId} />

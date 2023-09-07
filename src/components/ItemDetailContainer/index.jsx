@@ -13,6 +13,8 @@ const ItemDetailContainer = () => {
     const {id} = useParams()
     const [producto, setProducto] = useState({})
 
+
+    //TODO: REALIZAR EL LLAMADO A FIREBASE FILTRADO POR EL ID
     async function fetchData(id){
         const seleccionado = await getProducto(id)
         setProducto(seleccionado)
@@ -33,7 +35,7 @@ const getProducto = (id) => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(getProductoById(id))
-        }, 2000);
+        }, 1000);
     })
 }
 
