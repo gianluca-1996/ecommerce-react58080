@@ -12,24 +12,6 @@ const CartProvider = ({children}) => {
     const [cantidadCarrito, setCantidadCarrito] = useState(0) //MANTIENE CONSISTENCIA EN EL NUMERO DE ITEMS DENTRO DEL CARRITO
     let datos, total = 0
 
-/*    const getDatos = () => {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(data)
-                //reject("No se pudo obtener la data")
-            }, 1000);
-        })
-    }
-
-    async function fetchingData(){
-        try {
-            datos = await getDatos()
-            setProductos(datos)
-        } catch (error) {
-            console.log(error)
-        }
-    }
-*/
 
     //SUMA EL TOTAL DE LA COMPRA
     for(let i = 0; i < cart.length; i++){

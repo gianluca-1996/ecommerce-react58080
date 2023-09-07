@@ -54,7 +54,7 @@ const ItemDetail = ({producto}) => {
         <Card elevation={24}>
           <CardMedia
             sx={{ height: 200 }}
-            image={`../${producto.pictureUrl}`}
+            image={producto.pictureUrl}
             title={producto.title}
           />
           <CardContent className='cardContent'>
