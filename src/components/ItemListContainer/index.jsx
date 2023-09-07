@@ -46,9 +46,17 @@ const ItemListContainer = () => {
     }
 
     return(
+        <>
+        {loading ? (
+            <div className="loading">
+                <CircularIndeterminate/>
+            </div>
+        ) : (
             <div className="divItemListContainer">
                 <ItemList productos={productos}/>
-            </div>
+            </div> 
+        )}
+        </>
     );
     
 }

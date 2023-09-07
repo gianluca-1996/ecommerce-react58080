@@ -34,18 +34,18 @@ const ItemDetailContainer = () => {
         fetchData(id)
     }, [])
 
-    if(loading){
-        return(
+    return(
+        <>
+        {loading ? (
             <div className="loading">
                 <CircularIndeterminate/>
             </div>
-        );
-    }
-
-    return(
-        <div className="divItemDetailContainer">
-            <ItemDetail producto={producto}/>
-        </div>
+        ) : (
+            <div className="divItemDetailContainer">
+                <ItemDetail producto={producto}/>
+            </div>
+        )}
+        </>
     )
 }
 
