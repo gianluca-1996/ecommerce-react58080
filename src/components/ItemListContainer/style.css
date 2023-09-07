@@ -5,3 +5,10 @@
     justify-content: center;
     padding: 50px;
 }
+
+.loading{
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

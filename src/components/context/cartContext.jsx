@@ -3,18 +3,16 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import { useState, createContext, useEffect } from "react";
-import {data} from "../../mocks/data"
 
 export const CartContext = createContext();
 
 const CartProvider = ({children}) => {
 
-    const [productos, setProductos] = useState([])
     const [cart, setCart] = useState([])
     const [cantidadCarrito, setCantidadCarrito] = useState(0) //MANTIENE CONSISTENCIA EN EL NUMERO DE ITEMS DENTRO DEL CARRITO
     let datos, total = 0
 
-    const getDatos = () => {
+/*    const getDatos = () => {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(data)
@@ -31,10 +29,7 @@ const CartProvider = ({children}) => {
             console.log(error)
         }
     }
-
-    useEffect(() => {
-        fetchingData()
-    }, [])
+*/
 
     //SUMA EL TOTAL DE LA COMPRA
     for(let i = 0; i < cart.length; i++){
@@ -67,7 +62,7 @@ const CartProvider = ({children}) => {
     }
 
     return(
-        <CartContext.Provider value={{productos, addItem, removeItem, clearCart, cart, total, cantidadCarrito}}>{children}</CartContext.Provider>
+        <CartContext.Provider value={{addItem, removeItem, clearCart, cart, total, cantidadCarrito}}>{children}</CartContext.Provider>
     );
 };
 
