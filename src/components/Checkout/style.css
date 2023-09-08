@@ -1,0 +1,19 @@
+.compraExitosaMsj{
+    color: green;
+}
+
+.compraDiv{
+    height: 400px;
+    text-align: center;
+}
+
+#ordenEnCurso{
+    color: black;
+}
+
+.loading{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
