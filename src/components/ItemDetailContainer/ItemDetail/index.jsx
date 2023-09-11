@@ -16,23 +16,23 @@ import { Link } from 'react-router-dom';
 const ItemDetail = ({producto}) => {
   let [contador, setContador] = useState(0)
   let [cantidadAgregada, setCantidadAgregada] = useState(0)
+  const [desabilitaIncremento, setDesahilitaIncremento] = useState(false)
+  const [desabilitaDecremento, setDesabilitaDecremento] = useState(false)
   const {addItem} = useContext(CartContext)
-  let desabilitaIncremento = false
-  let desabilitaDecremento = false
   let desHabilitaCarrito = (producto.stock == 0 || contador == 0) ? true : false
 
   const incrementaContador = () => {
       if(contador < producto.stock)
           setContador(contador += 1)
       else
-          desabilitaIncremento = true
+          setDesahilitaIncremento(true)
   }
 
   const decrementaContador = () => {
       if(contador > 0)
           setContador(contador -= 1)
       else
-          desabilitaDecremento = true
+          setDesabilitaDecremento(true)
   }
 
   const onAdd = () => {
@@ -44,6 +44,8 @@ const ItemDetail = ({producto}) => {
           subtotal: producto.price * contador
       }
 
+      setDesabilitaDecremento(true)
+      setDesahilitaIncremento(true)
       setCantidadAgregada(contador)
       addItem(item, contador)
   }
@@ -64,12 +66,12 @@ const ItemDetail = ({producto}) => {
             <ul>
               <li>
                 <Typography variant="body2" color="text.secondary" className='infoItem'>
-                  <strong>{producto.description}</strong>
+                  <strong>Ingredientes: {producto.description}</strong>
                 </Typography>
               </li>
               <li>
               <Typography variant="body2" color="text.secondary" className='infoItem'>
-                <strong>${producto.price}</strong>
+                <strong>Precio: ${producto.price}</strong>
               </Typography>    
               </li>
               <li>
@@ -88,13 +90,18 @@ const ItemDetail = ({producto}) => {
                 cantidadAgregada == 0 ? (
                   <Button variant="contained" disabled={desHabilitaCarrito} onClick={onAdd}>
                     Agregar al carrito
-                </Button>
-                ) : (
-                  <Link to="/cart">
-                  <Button variant="contained">
-                    Finalizar Compra
                   </Button>
-                </Link>
+                ) : (
+                  <>
+                    <Link to="/cart">
+                      <Button variant="contained">
+                        Finalizar Compra
+                      </Button>
+                    </Link>
+                    <div>
+                      <h4 id='modificarInfo'>Para modificar la cantidad, elimine el producto del carrito</h4>
+                    </div>
+                  </>
                 )
               }
             </div>

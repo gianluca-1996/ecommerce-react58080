@@ -9,7 +9,7 @@
 }
 
 #tituloNav{
-    color: white;
+    color: gold;
     font-weight: 800;
     margin-left: 5%;
 }
@@ -20,4 +20,9 @@
     flex-wrap: wrap;
     width: 50%;
     margin-right: 5%;
+}
+
+button{
+    background-color: gold;
+    color: black;
 }

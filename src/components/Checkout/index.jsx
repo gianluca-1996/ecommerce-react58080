@@ -88,7 +88,7 @@ const Checkout = () => {
                 <h1 className="compraExitosaMsj">¡Compra exitosa!</h1>
                 <h2 className="compraExitosaMsj">Su numero de orden es: {orderId}</h2>
                 <Link to="/">
-                    <Button variant="contained">Volver</Button>
+                    <Button variant="contained">Volver a inicio</Button>
                 </Link>
             </div>
             
@@ -96,10 +96,11 @@ const Checkout = () => {
     }
 
     return(
-        <>
-            <h1>CheckOut</h1>
+        <div className="checkForm">
+            <h2 id="datosPersonales">Datos personales</h2>
             <CheckoutForm onConfirm={createOrder}/>
-        </>
+        </div>
+        
     )
 
 }

@@ -51,7 +51,7 @@ const CheckoutForm = ({onConfirm}) => {
                         {errors.email?.type === 'pattern' && <p className="error">El formato del email es incorrecto</p>}
                 </div>
                 <div id="btnsubmit">
-                    <Button type="submit" variant="contained">Enviar</Button>
+                    <Button type="submit" variant="contained">Confirmar compra</Button>
                 </div>
             </form>
         </div>
