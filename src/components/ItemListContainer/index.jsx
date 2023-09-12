@@ -8,15 +8,16 @@ import CircularIndeterminate from "../Loading"
 
 const ItemListContainer = () => {
     
-    const categoryId = useParams()
+    const categoryId = useParams()  //PARAMETRO PARA FILTRAR POR CATEGORIAS
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
 
-    //TODO: REALIZAR LA LLAMADA A FIRESTORE SEGUN CATEGORYID
+    //METODO PARA HACER LAS CONSULTAS A LA BASE DE DATOS
     const fetchData = async () => {
         let data = []
         let q
 
+        //SI LA CATEGORIA TIENE UN VALOR ENTONCES ARMA EL QUERY FILTRANDO POR CATEGORIA
         if(categoryId.categoryId){
             q = query(collection(db, "productos"), where("category", "==", categoryId.categoryId));
         }
@@ -24,26 +25,20 @@ const ItemListContainer = () => {
             q = query(collection(db, "productos"));
         }
 
-        const querySnapshot = await getDocs(q);
+        const querySnapshot = await getDocs(q); //OBTIENE LOS DOCUMENTOS DE LA BD
         querySnapshot.forEach((doc) => {
-            data.push({...doc.data(), id: doc.id})
+            data.push({...doc.data(), id: doc.id})  //INSERTA LOS DATOS DEL DOCUMENTO MAS SU ID
         });
         
         setProductos(data)
         setLoading(false)
     }
 
+    //AL CAMBIAR EL ESTADO DE LA CATEGORIA SE RENDERIZA LA VISTA DE PRODUCTOS
     useEffect( () => {
         fetchData()
     }, [categoryId])
 
-    if(loading){
-        return(
-            <div className="loading">
-                <CircularIndeterminate/>
-            </div>
-        );
-    }
 
     return(
         <>

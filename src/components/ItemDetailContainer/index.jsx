@@ -12,22 +12,19 @@ import CircularIndeterminate from "../Loading"
 
 const ItemDetailContainer = () => {
     
-    const {id} = useParams()
+    const {id} = useParams()    //PARAMETRO PARA IDENTIFICAR EL PRODUCTO SELECCIONADO
     const [producto, setProducto] = useState({})
     
     const [loading, setLoading] = useState(true)
 
+    //METODO PARA OBTENER EL DOCUMENTO DE LA BD
     const fetchData = async () => {
 
         const docRef = doc(db, "productos", id);
         const docSnap = await getDoc(docRef);
         
-        if (docSnap.exists()) {
-            setProducto({...docSnap.data(), id: docSnap.id})
-            setLoading(false)
-        } else {
-            alert("Producto no encontrado en la base de datos")
-        }
+        setProducto({...docSnap.data(), id: docSnap.id})
+        setLoading(false)
     }
     
     useEffect(() => {

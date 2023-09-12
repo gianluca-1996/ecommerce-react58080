@@ -14,10 +14,10 @@ import { Link } from 'react-router-dom';
 
 
 const ItemDetail = ({producto}) => {
-  let [contador, setContador] = useState(0)
+  let [contador, setContador] = useState(0) 
   let [cantidadAgregada, setCantidadAgregada] = useState(0)
-  const [desabilitaIncremento, setDesahilitaIncremento] = useState(false)
-  const [desabilitaDecremento, setDesabilitaDecremento] = useState(false)
+  let desabilitaIncremento = false
+  let desabilitaDecremento = false
   const {addItem} = useContext(CartContext)
   let desHabilitaCarrito = (producto.stock == 0 || contador == 0) ? true : false
 
@@ -25,14 +25,14 @@ const ItemDetail = ({producto}) => {
       if(contador < producto.stock)
           setContador(contador += 1)
       else
-          setDesahilitaIncremento(true)
+        desabilitaIncremento = true
   }
 
   const decrementaContador = () => {
       if(contador > 0)
           setContador(contador -= 1)
       else
-          setDesabilitaDecremento(true)
+          desabilitaDecremento = true
   }
 
   const onAdd = () => {
@@ -44,8 +44,6 @@ const ItemDetail = ({producto}) => {
           subtotal: producto.price * contador
       }
 
-      setDesabilitaDecremento(true)
-      setDesahilitaIncremento(true)
       setCantidadAgregada(contador)
       addItem(item, contador)
   }
